@@ -14,13 +14,6 @@
 
   if ([@"getPlatformVersion" isEqualToString:call.method]) {
     result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
-  } else
-    if ([@"isAppInstalled" isEqualToString:call.method]) {
-    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:call.arguments[@"package_name"]]]){
-        result(@(YES));
-    } else{
-        result(@(NO));}
-    
   } else if ([@"openApp" isEqualToString:call.method]) {
      @try {
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:call.arguments[@"package_name"]]]) {
@@ -41,12 +34,12 @@
     @catch (NSException * e) {
       NSLog(@"exception herre");
       result(e);
-    
+
     }
   } else {
     result(FlutterMethodNotImplemented);
   }
- 
+
 }
 
 @end

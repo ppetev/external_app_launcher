@@ -36,22 +36,10 @@ If your deployment target is greater than or equal to 9, then you also need to u
 But unlike in Android, it will not navigate to store (appStore) if app is not found in the device.
 
 For doing so you need to provide the iTunes link of the app.
+
 ## Demo
 
 <img src="https://user-images.githubusercontent.com/60135944/171337798-bdf3f78d-d002-4353-aab3-8b07dd688916.gif" width="400"/>
-
-## Implementation
-
-Apart from opening an external app, this package can also be used to check whether an app is installed in the device or not.
-
-This can done by simply calling the function `isAppInstalled`
-
-    await LaunchApp.isAppInstalled(
-      androidPackageName: 'net.pulsesecure.pulsesecure'
-      iosUrlScheme: 'pulsesecure://'
-    );
-
-This returns true and false based on the fact whether app is installed or not.
 
 ## Code Illustration
 
