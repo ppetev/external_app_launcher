@@ -32,17 +32,8 @@ class LaunchApp {
       'app_store_link': appStoreLink
     }).then((value) {
       if (value == "app_opened") {
-        print("app opened successfully");
         return 1;
       } else {
-        if (value == "navigated_to_store") {
-          if (Platform.isIOS) {
-            print("Redirecting to AppStore as the app is not present on the device");
-          } else
-            print("Redirecting to Google Play Store as the app is not present on the device");
-        } else {
-          print(value);
-        }
         return 0;
       }
     });
